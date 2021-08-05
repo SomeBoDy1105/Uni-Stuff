@@ -1,0 +1,5 @@
+- 👋 Hi, I’m @SomeBoDy1105
+- 👀 I’m interested in AI, Python and Flutter
+- 🌱 I’m currently learning Flutter
+- 💞️ I’m looking to collaborate on AI
+- 📫 How to reach me IG:@lider.moustafa
