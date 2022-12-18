@@ -6,5 +6,4 @@ and study always so u won't have to stress out like i am rightnow :D
 
 - 👀 I’m interested in AI, Python and Flutter
 - 🌱 I’m currently learning Flutter
-- 💞️ I’m looking to collaborate on AI
 - 📫 How to reach me IG:@lider.moustafa

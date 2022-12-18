@@ -45,7 +45,7 @@ void creation (liste *tete,int n){
 		
 		}	
 	}
-void afiche(liste tete){
+void affiche(liste tete){
 	liste P;
 	P=tete;
 	while(P!=NULL){
@@ -107,10 +107,10 @@ int main(){
 	creation(&T2,n);
 
 	printf("les element de liste T1 est =\n");
-	afiche(T1);
+	affiche(T1);
 
 	printf("les element de liste T2 est =\n");
-	afiche(T2);
+	affiche(T2);
 
 	fusione(T1,T2,&T3);
 
