@@ -187,7 +187,7 @@ int main ()
 	int n,i,valeur;
 	liste tete,p;
 	tete=NULL;
-	printf("donner la valeur N nombre de case :");
+	printf("nombre de case :");
 	scanf("%d",&n);
 	creer_liste (&tete,n);
 	p=tete;
