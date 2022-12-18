@@ -10,13 +10,15 @@ struct element
     liste svt;
 };
 /*affichage*/
-/*fifo*/
-void creation (liste *tete,int n){
+    /*fifo*/
+void creation (liste *tete,int n)
+{
 	liste nouv,p,Q;
 	bool b;
 	int i;
 	*tete=NULL;
-	for(i=1;i<=n;i++){
+	for(i=1;i<=n;i++)
+        {
 		nouv=(liste)malloc(sizeof(element));
 		printf("val %d=",i);
 		scanf("%d",&nouv->info);
@@ -33,13 +35,15 @@ void creation (liste *tete,int n){
 				b=false;
 				Q=(*tete);
 				p=NULL;
-				while(Q!=NULL && b==false){
-					if(Q->info<=nouv->info){
-						p=Q;
-						Q=Q->svt;
-					}
-					else
-						b=true;
+				while(Q!=NULL && b==false)
+                        {
+					    if(Q->info<=nouv->info)
+                        {
+						    p=Q;
+						    Q=Q->svt;
+					    }
+					    else
+						    b=true;
 					}
 					nouv->svt=Q;
 					p->svt=nouv; 
@@ -48,3 +52,8 @@ void creation (liste *tete,int n){
 		
 		}	
 	}
+/*------------------------------------------------------------------------------------------------------*/
+/*Lifo*/
+
+
+
