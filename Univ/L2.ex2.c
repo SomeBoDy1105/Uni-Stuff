@@ -196,7 +196,8 @@ int main ()
 		printf("%d \t",p->val);
 		p=p->suivt;
 		
-	}
+	};
+
 	printf(" \n donnes la valeur :");
 	scanf("%d",&valeur);
 
