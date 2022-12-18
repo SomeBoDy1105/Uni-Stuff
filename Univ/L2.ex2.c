@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -202,14 +203,11 @@ int main ()
 	printf("adres = %d \n",occurs_adress(tete,valeur));
 	printf("nombre occurens = %d",occurs_nbr(tete,valeur));
 	int x,k;
-
 	printf("\ndonnez la valeur que vous souhaitez ajouter :");
 	scanf("%d",&x);
-
 	printf("donnez maintenant n'importe quel rang qui ajoute de la valeur :");
 	scanf("%d",&k);
 	insertion(&tete,k,x);
-
 	printf("\n");
 	p=tete;
 	while(p!=NULL)
@@ -223,7 +221,6 @@ int main ()
 	printf("\nvaleur ajouter X apres Y :");
 	scanf("%d",&X);
 	printf("valeur Y :");
-
 	scanf("%d",&Y);
 	insertion_X_Y(&tete,X,Y);
 	printf("\n");
@@ -239,7 +236,6 @@ int main ()
 	supprimer_pos(&tete,k);
 		printf("\n");
 	p=tete;
-	
 	while(p!=NULL)
 	{
 		printf("%d \t",p->val);
