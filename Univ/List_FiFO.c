@@ -4,21 +4,26 @@
 
 typedef struct  cellule cellule;
 typedef cellule* liste;
-struct cellule {
+struct cellule 
+{
 	int info;
 	liste svt;	
 };
-void creation (liste *tete,int n){
+
+void creation (liste *tete,int n)
+{
 	liste nouv,p,Q;
 	bool b;
 	int i;
 	*tete=NULL;
-	for(i=1;i<=n;i++){
+	for(i=1;i<=n;i++)
+	{
 		nouv=(liste)malloc(sizeof(cellule));
 		printf("val %d=",i);
 		scanf("%d",&nouv->info);
 		nouv->svt=NULL;
-		if ((*tete)==NULL){
+		if ((*tete)==NULL)
+		{
 			(*tete)=nouv;	
 		}
 		else{
