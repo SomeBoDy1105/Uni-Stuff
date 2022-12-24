@@ -3,7 +3,7 @@
 #include <stdbool.h>
 
 typedef struct element element;
-typedef element* list;
+typedef element *list;
 struct element
 {
     int info;
@@ -12,37 +12,32 @@ struct element
 /*creating a list*/
 void creation(liste *tete, int n)
 {
-    list nouv,p,q;
+    list nouv, p, q;
     bool b;
     int i;
-    *tete=NULL;
+    *tete = NULL;
     for (i = 1; i <= n; i++)
     {
-        nouv=(list)malloc(sizeof(element));
-        printf("val %d=",i);
-        scanf("%d",&nouv->info);
-        nouv->svt=NULL;
-        if ((*tete)==NULL)
+        nouv = (list)malloc(sizeof(element));
+        printf("val %d=", i);
+        scanf("%d", &nouv->info);
+        nouv->svt = NULL;
+        if ((*tete) == NULL)
         {
-            (*tete)=nouv;
+            (*tete) = nouv;
         }
         else
         {
-            if ((*tete)->info=nouv->info)
+            if ((*tete)->info = nouv->info)
             {
                 nouv
             }
         }
     }
-
 }
-
 
 int main()
 {
 
-
-
-    
     return 0;
 }
