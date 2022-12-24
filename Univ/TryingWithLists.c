@@ -10,7 +10,7 @@ struct element
     list svt;
 };
 /*creating a list*/
-void creation(liste *tete, int n)
+void creation(list *tete, int n)
 {
     list nouv, p, q;
     bool b;
@@ -30,7 +30,7 @@ void creation(liste *tete, int n)
         {
             if ((*tete)->info = nouv->info)
             {
-                nouv
+                nouv->svt = (*tete);
             }
         }
     }
