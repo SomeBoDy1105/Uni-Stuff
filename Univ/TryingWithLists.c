@@ -31,11 +31,39 @@ void creation(list *tete, int n)
             if ((*tete)->info = nouv->info)
             {
                 nouv->svt = (*tete);
+                (*tete) = nouv;
+            }
+            else
+            {
+                b = false;
+                q = (*tete);
+                p=NULL;
+                while (q != NULL && b == false)
+                {
+                    if (q->info <= nouv->info)
+                    {
+                        p = q;
+                        q = q->svt;
+                    }
+                    else
+                        b = true;
+                }
+                nouv->svt = q;
+                p -> svt = nouv;
             }
         }
     }
 }
-
+void afficher(list tete){
+ list p;
+ p=tete;
+ while (p!= NULL)
+ {
+    printf("%d \t", p->info);
+    p = p->svt;
+ }
+ printf("\n\n");
+}
 int main()
 {
 
