@@ -64,6 +64,7 @@ void afficher(list tete){
  }
  printf("\n\n");
 }
+void()
 int main()
 {
 
