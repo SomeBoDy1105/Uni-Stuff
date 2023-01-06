@@ -54,6 +54,7 @@ void creation(list *tete, int n)
         }
     }
 }
+/*displaying a list*/
 void afficher(list tete){
  list p;
  p=tete;
@@ -64,9 +65,70 @@ void afficher(list tete){
  }
  printf("\n\n");
 }
-void()
+/*merging two lists*/
+void fusione(list *tete1, list *tete2, list *tete3)
+{
+    list p, q, r;
+    p = *tete1;
+    q = *tete2;
+    *tete3 = NULL;
+    while (p != NULL && q != NULL)
+    {
+        if (p->info <= q->info)
+        {
+            r = p;
+            p = p->svt;
+        }
+        else
+        {
+            r = q;
+            q = q->svt;
+        }
+        r->svt = *tete3;
+        *tete3 = r;
+    }
+    if (p == NULL)
+    {
+        while (q != NULL)
+        {
+            r = q;
+            q = q->svt;
+            r->svt = *tete3;
+            *tete3 = r;
+        }
+    }
+    else
+    {
+        while (p != NULL)
+        {
+            r = p;
+            p = p->svt;
+            r->svt = *tete3;
+            *tete3 = r;
+        }
+    }
+}
+
+
 int main()
 {
+    list tete1, tete2, tete3;
+    int n1, n2;
+    printf("donner le nombre d'elements de la premiere liste: ");
+    scanf("%d", &n1);
+    creation(&tete1, n1);
+    printf("donner le nombre d'elements de la deuxieme liste: ");
+    scanf("%d", &n2);
+    creation(&tete2, n2);
+    printf("la premiere liste est: ");
+    afficher(tete1);
+    printf("la deuxieme liste est: ");
+    
+    afficher(tete2);
+    fusione(&tete1, &tete2, &tete3);
+    printf("la liste fusionnee est: ");
+    afficher(tete3);
+
 
     return 0;
 }
