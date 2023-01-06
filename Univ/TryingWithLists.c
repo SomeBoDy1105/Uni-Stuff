@@ -137,6 +137,6 @@ int main()
     /*displaying the new list*/
     afficher(tete3);
 
-
+    system("pause");
     return 0;
 }
