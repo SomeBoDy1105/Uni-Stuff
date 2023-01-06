@@ -112,21 +112,29 @@ void fusione(list *tete1, list *tete2, list *tete3)
 
 int main()
 {
-    list tete1, tete2, tete3;
+    list tete1, tete2, tete3, p, q, r, nouv;
     int n1, n2;
+    tete1 = NULL;
+    tete2 = NULL;
+    tete3 = NULL;
+    /*filling Tete1*/
     printf("donner le nombre d'elements de la premiere liste: ");
     scanf("%d", &n1);
     creation(&tete1, n1);
+    /*filling tete2*/
     printf("donner le nombre d'elements de la deuxieme liste: ");
     scanf("%d", &n2);
     creation(&tete2, n2);
+    /**/
     printf("la premiere liste est: ");
     afficher(tete1);
+    /**/
     printf("la deuxieme liste est: ");
-    
     afficher(tete2);
+    /*merging two lists*/
     fusione(&tete1, &tete2, &tete3);
     printf("la liste fusionnee est: ");
+    /*displaying the new list*/
     afficher(tete3);
 
 
