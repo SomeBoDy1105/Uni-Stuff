@@ -10,87 +10,61 @@ struct element
     list svt;
 };
 /*creating a list*/
-void creation(list *tete, int n)
+list tete = NULL;
+void creation(list* tete, int n1)
 {
-    list nouv, ptr;
-    int i;
-    *tete = NULL;
-    for (i = 1; i <= n; i++)
+    int i, x;
+    list nouv;
+    for (i = 0; i < n1; i++)
     {
+        printf("Enter value %d: ", i + 1);
+        scanf("%d", &x);
         nouv = (list)malloc(sizeof(element));
-        printf("val %d=", i);
-        scanf("%d", &nouv->info);
-        nouv->svt = NULL;
-        if ((*tete) == NULL)
+        if (*tete == NULL)
         {
-            (*tete) = nouv;
+            *tete = nouv;
         }
         else
         {
-            if ((*tete)->info = nouv->info)
+            list temp = *tete;
+            while (temp->svt != NULL)
             {
-                nouv->svt = (*tete);
-                (*tete) = nouv;
+                temp = temp->svt;
             }
-            else
-            {
-                ptr = tete;
-                while (ptr->svt != NULL)
-                {
-                    ptr = ptr->svt;
-                }
-                ptr->svt = nouv;
-
-                /* b = false;
-                 q = (*tete);
-                 p=NULL;
-                 while (q != NULL && b == false)
-                 {
-                     if (q->info <= nouv->info)
-                     {
-                         p = q;
-                         q = q->svt;
-                     }
-                     else
-                         b = true;
-                 }
-                 nouv->svt = q;
-                 p -> svt = nouv;
-                 */
-            }
+            temp->svt = nouv;
         }
     }
 }
+
 /*displaying a list*/
 void afficher(list tete)
 {
-    list p;
-    p = tete;
-    if (p == NULL)
+    list temp = tete;
+    if (temp == NULL)
     {
         printf("List is empty");
         return;
     }
-    while (p != NULL)
+    while (temp != NULL)
     {
-        printf("%d \t", p->info);
-        p = p->svt;
+        printf("%d \t", temp->info);
+        temp = temp->svt;
     }
-    printf("\n\n");
+    printf("\n");
 }
 /*merging two lists*/
 void fusione(list *tete1, list *tete2, list *tete3)
 {
-    list p, q, r;
-    p = *tete1;
+    list temp, q, r;
+    temp = *tete1;
     q = *tete2;
     *tete3 = NULL;
-    while (p != NULL && q != NULL)
+    while (temp != NULL && q != NULL)
     {
-        if (p->info <= q->info)
+        if (temp->info <= q->info)
         {
-            r = p;
-            p = p->svt;
+            r = temp;
+            temp = temp->svt;
         }
         else
         {
@@ -100,7 +74,7 @@ void fusione(list *tete1, list *tete2, list *tete3)
         r->svt = *tete3;
         *tete3 = r;
     }
-    if (p == NULL)
+    if (temp == NULL)
     {
         while (q != NULL)
         {
@@ -112,10 +86,10 @@ void fusione(list *tete1, list *tete2, list *tete3)
     }
     else
     {
-        while (p != NULL)
+        while (temp != NULL)
         {
-            r = p;
-            p = p->svt;
+            r = temp;
+            temp = temp->svt;
             r->svt = *tete3;
             *tete3 = r;
         }
@@ -124,7 +98,7 @@ void fusione(list *tete1, list *tete2, list *tete3)
 
 int main()
 {
-    list tete1, tete2, tete3, p, q, r, nouv;
+    list tete1, tete2, tete3, temp, q, r, nouv;
     int n1, n2;
     tete1 = NULL;
     tete2 = NULL;
