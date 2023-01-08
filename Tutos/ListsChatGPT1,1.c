@@ -1,41 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-struct node {
-    int n;
-    struct node* next;
+typedef struct element element;
+typedef element* liste;
+struct element {
+    int val;
+    liste next;
 };
 
-struct node* tete = NULL;
+liste tete = NULL;
 
-void insert_at_end(int n) {
-    struct node* nouv = (struct node*)malloc(sizeof(struct node));
-    nouv->n = n;
+void insert_at_end(int val) {
+    liste nouv = (liste)malloc(sizeof(liste));
+    nouv->val = val;
     nouv->next = NULL;
     if (tete == NULL) {
         tete = nouv;
         return;
     }
-    struct node* temp = tete;
+    liste temp = tete;
     while (temp->next != NULL)
         temp = temp->next;
     temp->next = nouv;
 }
 
 int main() {
-    int i, n;
+    int i, val;
     printf("Enter the number of elements: ");
-    scanf("%d", &n);
-    for (i = 0; i < n; i++) {
+    scanf("%d", &val);
+    for (i = 0; i < val; i++) {
         int X;
         printf("Enter value %d: ", i+1);
         scanf("%d", &X);
         insert_at_end(X);
     }
-    struct node* temp = tete;
+    liste temp = tete;
     printf("\nElements in linked list: ");
     while (temp != NULL) {
-        printf("%d ", temp->n);
+        printf("%d \t ", temp->val);
         temp = temp->next;
     }
     printf("\n");
