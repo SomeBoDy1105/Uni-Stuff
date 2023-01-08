@@ -9,29 +9,31 @@ struct element
 	int val;
 	liste suivt;
 };
+liste tete = NULL;
 void creer_liste (liste *tete ,int n)
 {
-	int i;
-	*tete = NULL;
-	liste nouv,Q;
-	for(i=0;i<n;i++){
-	nouv= (liste)malloc(sizeof(element));
-	if(nouv != NULL)
+	int i,x;
+	liste nouv;
+	for(i = 0; i < n; i++)
 	{
-	scanf("%d",&nouv->val);
-	if((*tete)==NULL)
-	{
-		nouv->suivt=(*tete);
-		*tete = nouv;
+		printf("Enter value %d: ", i+1);
+        scanf("%d", &x);
+		/*start of function*/
+		nouv = (liste)malloc(sizeof(element));
+		nouv->val = n;
+		nouv->suivt = NULL;
+		if (tete == NULL) {
+			tete = nouv;
+			return;
+		}
+		liste temp = tete;
+		while (temp->suivt != NULL){
+			temp = temp->suivt;
+			temp->suivt = nouv;
+		}
 	}
-	else{
-	
-	nouv->suivt = NULL;
-	Q->suivt = nouv;
-    }
-    Q=nouv;
-	}
-}	
+		
+
 }
 liste occurs_adress(liste tete,int valeur)
 {
