@@ -22,18 +22,18 @@ int main()
         int choice;
         while(1){
                
-                printf("n                MENU                             n");
-                printf("n 1.Create     n");
-                printf("n 2.Display    n");
-                printf("n 3.Insert at the beginning    n");
-                printf("n 4.Insert at the end  n");
-                printf("n 5.Insert at specified position       n");
-                printf("n 6.Delete from beginning      n");
-                printf("n 7.Delete from the end        n");
-                printf("n 8.Delete from specified position     n");
-                printf("n 9.Exit       n");
-                printf("n--------------------------------------n");
-                printf("Enter your choice:t");
+                printf("\n                MENU                             \n");
+                printf("\n 1.Create     \n");
+                printf("\n 2.Display    \n");
+                printf("\n 3.Insert at the beginning    \n");
+                printf("\n 4.Insert at the end  \n");
+                printf("\n 5.Insert at specified position       \n");
+                printf("\n 6.Delete from beginning      \n");
+                printf("\n 7.Delete from the end        \n");
+                printf("\n 8.Delete from specified position     \n");
+                printf("\n 9.Exit       \n");
+                printf("\n--------------------------------------\n");
+                printf("Enter your choice:\t");
                 scanf("%d",&choice);
                 switch(choice)
                 {
@@ -67,7 +67,7 @@ int main()
                                         break;
                              
                         default:
-                                        printf("n Wrong Choice:n");
+                                        printf("\n Wrong Choice:\n");
                                         break;
                 }
         }
@@ -79,10 +79,10 @@ void create()
         temp=(struct node *)malloc(sizeof(struct node));
         if(temp==NULL)
         {
-                printf("nOut of Memory Space:n");
+                printf("\nOut of Memory Space:\n");
                 exit(0);
         }
-        printf("nEnter the data value for the node:t");
+        printf("\nEnter the data value for the node:\t");
         scanf("%d",&temp->info);
         temp->next=NULL;
         if(start==NULL)

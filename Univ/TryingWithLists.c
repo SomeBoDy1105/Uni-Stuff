@@ -12,8 +12,7 @@ struct element
 /*creating a list*/
 void creation(list *tete, int n)
 {
-    list nouv, p, q;
-    bool b;
+    list nouv, ptr;
     int i;
     *tete = NULL;
     for (i = 1; i <= n; i++)
@@ -35,35 +34,49 @@ void creation(list *tete, int n)
             }
             else
             {
-                b = false;
-                q = (*tete);
-                p=NULL;
-                while (q != NULL && b == false)
+                ptr = tete;
+                while (ptr->svt != NULL)
                 {
-                    if (q->info <= nouv->info)
-                    {
-                        p = q;
-                        q = q->svt;
-                    }
-                    else
-                        b = true;
+                    ptr = ptr->svt;
                 }
-                nouv->svt = q;
-                p -> svt = nouv;
+                ptr->svt = nouv;
+
+                /* b = false;
+                 q = (*tete);
+                 p=NULL;
+                 while (q != NULL && b == false)
+                 {
+                     if (q->info <= nouv->info)
+                     {
+                         p = q;
+                         q = q->svt;
+                     }
+                     else
+                         b = true;
+                 }
+                 nouv->svt = q;
+                 p -> svt = nouv;
+                 */
             }
         }
     }
 }
 /*displaying a list*/
-void afficher(list tete){
- list p;
- p=tete;
- while (p!= NULL)
- {
-    printf("%d \t", p->info);
-    p = p->svt;
- }
- printf("\n\n");
+void afficher(list tete)
+{
+    list p;
+    p = tete;
+    if (p == NULL)
+    {
+        printf("List is empty");
+        return;
+    }
+    while (p != NULL)
+    {
+        printf("%d \t", p->info);
+        p = p->svt;
+    }
+    printf("\n\n");
 }
 /*merging two lists*/
 void fusione(list *tete1, list *tete2, list *tete3)
@@ -109,7 +122,6 @@ void fusione(list *tete1, list *tete2, list *tete3)
     }
 }
 
-
 int main()
 {
     list tete1, tete2, tete3, p, q, r, nouv;
@@ -121,13 +133,13 @@ int main()
     printf("Number of elements of the first list is: ");
     scanf("%d", &n1);
     creation(&tete1, n1);
+    /*displaying the first list*/
+    printf("The first list is: ");
+    afficher(tete1);
     /*filling tete2*/
     printf("Number of elements of the second list is: ");
     scanf("%d", &n2);
     creation(&tete2, n2);
-    /*displaying the first list*/
-    printf("The first list is: ");
-    afficher(tete1);
     /*displaying the second list*/
     printf("the second list is: ");
     afficher(tete2);
