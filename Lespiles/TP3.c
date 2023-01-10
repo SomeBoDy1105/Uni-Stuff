@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-
+#include "Pile.h"
+/*
 typedef struct cellule cellule;
 typedef cellule *list;
 typedef struct cellule
@@ -11,7 +12,7 @@ typedef struct cellule
     list suivt;
 };
 
-/*declarring a pile*/
+//declarring a pile
 typedef struct struc struc;
 typedef struc *pile;
 typedef struct  struc
@@ -20,58 +21,7 @@ typedef struct  struc
     list suivt_list;
     pile suiv;
 };
-
-
-pile initpile()
-{
-    return NULL;
-}
-void empiler(pile *suiv, char *info , list suivt_list)
-{
-    pile p = (pile)malloc(sizeof(pile));
-    p->info = info;
-    p->suivt_list = suivt_list;
-    p->suiv = *suiv;
-    *suiv = p;
-}
-void dempiler (pile suiv, char *info, list *suivt_list)
-{
-
-    pile p = suiv;
-    *info = p->info;
-    *suivt_list = p->suivt_list;
-    suiv = suiv->suiv;
-    free(p);
-}
-void afficherpile(pile suiv)
-{
-    pile p = suiv;
-    while (p != NULL)
-    {
-        printf("%suiv", p->info);
-        dempiler(p, p->info, &p->suivt_list);
-
-    }
-}
-void libererpile(pile *suiv)
-{
-    pile p = *suiv;
-    while (p != NULL)
-    {
-        *suiv = p->suiv;
-        free(p);
-        p = *suiv;
-    }
-}
-bool pilevide(pile suiv)
-{
-    return suiv == NULL;
-}
-void sommetpile(pile suiv, char *info, list *suivt_list)
-{
-    *info = suiv->info;
-    *suivt_list = suiv->suivt_list;
-}
+*/
 
 
 
@@ -152,9 +102,6 @@ int main()
             scanf("%s",C);
         }
     }
-
-
-
     //question 3
     printf("\n\n");
     SUPP(&tete);

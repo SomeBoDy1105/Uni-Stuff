@@ -1,54 +1,27 @@
-#ifndef pilemn
-#define pilemn
--
-pile initpile()
-{
-    return NULL;
-}
-void empiler(pile *suiv, char *info , list suivt_list)
-{
-    pile p = (pile)malloc(sizeof(struct pile));
-    p->info = info;
-    p->suivt_list = suivt_list;
-    p->suivant = *suiv;
-    *suiv = p;
-}
-void dempiler (pile suiv, char *info, list *suivt_list)
-{
 
-    pile p = suiv;
-    *info = p->info;
-    *suivt_list = p->suivt_list;
-    suiv = suiv->suivant;
-    free(p);
-}
-void afficherpile(pile suiv)
+typedef struct cellule cellule;
+typedef cellule *list;
+typedef struct cellule
 {
-    pile p = suiv;
-    while (p != NULL)
-    {
-        printf("%suiv", p->info);
-        dempiler(p, p->info, &p->suivt_list);
+    char info[30];
+    list suivt;
+};
 
-    }
-}
-void libererpile(pile *suiv)
+/*declarring a pile*/
+typedef struct struc struc;
+typedef struc *pile;
+typedef struct  struc
 {
-    pile p = *suiv;
-    while (p != NULL)
-    {
-        *suiv = p->suivant;
-        free(p);
-        p = *suiv;
-    }
-}
-bool pilevide(pile suiv)
-{
-    return suiv == NULL;
-}
-void sommetpile(pile suiv, char *info, list *suivt_list)
-{
-    *info = suiv->info;
-    *suivt_list = suiv->suivt_list;
-}
-#endif // !pilemn
+    char info;
+    list suivt_list;
+    pile suiv;
+};
+
+
+pile initpile();
+void empiler(pile *suiv, char *info , list suivt_list);
+void dempiler (pile suiv, char *info, list *suivt_list);
+void afficherpile(pile suiv);
+void libererpile(pile *suiv);
+bool pilevide(pile suiv);
+void sommetpile(pile suiv, char *info, list *suivt_list);
