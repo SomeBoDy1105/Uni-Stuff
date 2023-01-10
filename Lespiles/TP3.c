@@ -68,25 +68,8 @@ int main()
 {   
     list tete,p;
     char C[30];
-   /* //question 1
-    printf("donner une pays : ");
-    scanf("%s",C);
-    tete = PREMIER(C);
-    printf("%s\n", tete->info);
-    // question 2
-
-    printf("donner une pays : ");
-    scanf("%s",C);
-    AJOUT(&tete,C);
-    p = tete;
-    while (p != NULL)
-    {
-        printf("%s \t",p->info);
-        p = p->suivt;
-    }
-    */
-
-   construction(&tete);
+    //question 1 & 2
+    construction(&tete);
     p = tete;
     while (p != NULL)
     {
