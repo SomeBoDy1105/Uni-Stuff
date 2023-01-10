@@ -1,0 +1,15 @@
+char aplha[26] = "abcdefghijklmnopqrstuvwxyz";
+for (int i = 0; i < 26; i++)
+{
+    empiler(&s, aplha[i], NULL);
+}
+//------------------------------------------
+s1 = initpile();
+b = false;
+printf("donner une pays : ");
+scanf("%s",C);
+char c1= C[0];
+ while ()
+ {
+ }
+ 

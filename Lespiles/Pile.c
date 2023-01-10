@@ -26,7 +26,7 @@ pile initpile()
 }
 void empiler(pile *suiv, char *info , list suivt_list)
 {
-    pile p = (pile)malloc(sizeof(pile));
+    pile p = (pile)malloc(sizeof(struc));
     p->info = info;
     p->suivt_list = suivt_list;
     p->suiv = *suiv;
@@ -41,14 +41,26 @@ void dempiler (pile suiv, char *info, list *suivt_list)
     suiv = suiv->suiv;
     free(p);
 }
-void afficherpile(pile suiv)
-{
-    pile p = suiv;
-    while (p != NULL)
-    {
-        printf("%s", p->info);
-        dempiler(p, p->info, &p->suivt_list);
 
+afficherpile(pile s)
+{
+    list tete;
+    char c;
+    while (pilevide(s) == false)
+    {
+        dempiler(s, c, &tete);
+        if (tete != NULL)
+        {
+             printf("%c \t", c);
+            while (tete != NULL)
+        {
+            printf("%s \t", tete->info);
+            tete = tete->suivt;
+        }
+        printf("\n----------------------------------------------------------\n");
+        }
+        
+       
     }
 }
 void libererpile(pile *suiv)
