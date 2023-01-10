@@ -105,7 +105,7 @@ int main()
     //question 3
     printf("\n\n");
     SUPP(&tete);
-    printf("%s", tete->info);
+    printf("%s\n", tete->info);
 
     return 0;
 }
