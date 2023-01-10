@@ -3,25 +3,6 @@
 #include <stdbool.h>
 #include <string.h>
 #include "Pile.h"
-/*
-typedef struct cellule cellule;
-typedef cellule *list;
-typedef struct cellule
-{
-    char info[30];
-    list suivt;
-};
-
-//declarring a pile
-typedef struct struc struc;
-typedef struc *pile;
-typedef struct  struc
-{
-    char info;
-    list suivt_list;
-    pile suiv;
-};
-*/
 
 
 
@@ -105,7 +86,7 @@ int main()
     //question 3
     printf("\n\n");
     SUPP(&tete);
-    printf("%s\n", tete->info);
+    printf("%s \n\n", tete->info);
 
     return 0;
 }
