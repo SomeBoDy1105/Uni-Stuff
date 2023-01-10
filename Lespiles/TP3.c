@@ -46,27 +46,7 @@ void SUPP (list *tete )
     
 }
 
-int main()
-{   
-    list tete,p;
-    char C[30];
-    //question 1
-    printf("donner une pays : ");
-    scanf("%s",C);
-    tete = PREMIER(C);
-    printf("%s\n", tete->info);
-    // question 2
-
-    printf("donner une pays : ");
-    scanf("%s",C);
-    AJOUT(&tete,C);
-    p = tete;
-    while (p != NULL)
-    {
-        printf("%s \t",p->info);
-        p = p->suivt;
-    }
-    void construction (list *tete)
+void construction (list *tete)
     {
         list nouv;
         char C[30];
@@ -83,10 +63,40 @@ int main()
             scanf("%s",C);
         }
     }
+
+int main()
+{   
+    list tete,p;
+    char C[30];
+   /* //question 1
+    printf("donner une pays : ");
+    scanf("%s",C);
+    tete = PREMIER(C);
+    printf("%s\n", tete->info);
+    // question 2
+
+    printf("donner une pays : ");
+    scanf("%s",C);
+    AJOUT(&tete,C);
+    p = tete;
+    while (p != NULL)
+    {
+        printf("%s \t",p->info);
+        p = p->suivt;
+    }
+    */
+
+   construction(&tete);
+    p = tete;
+    while (p != NULL)
+    {
+        printf("%s \t",p->info);
+        p = p->suivt;
+    }
     //question 3
     printf("\n\n");
     SUPP(&tete);
     printf("%s \n\n", tete->info);
-
+    
     return 0;
 }
