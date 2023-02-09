@@ -85,26 +85,26 @@ void construction(pile *piles, int n)
                 {
                     dempiler(s, c2, &tete2);
                     tete2 = PREMIER(pays);
-                    empiler(s, c2, tete2);
+                    empiler(&s, c2,&tete2);
                 }
                 else
                 {
                     dempiler(s, c2, &tete2);
                     AJOUT(&tete2, pays);
-                    empiler(s, c2, tete2);
+                    empiler(&s, c2, &tete2);
                 }
                 b = true;
             }
             else
             {
                 dempiler(s, c2, &tete2);
-                empiler(s1, c2, tete2);
+                empiler(&s1, c2, &tete2);
             }
         }
         while (pilevide(s1)== false )
         {
             dempiler(s1,c2,&tete2);
-            empiler(s,c1,&tete2);
+            empiler(&s,c1,&tete2);
         }
     }
 }

@@ -34,14 +34,12 @@ void empiler(pile *suiv, char *info , list suivt_list)
 }
 void dempiler (pile suiv, char *info, list *suivt_list)
 {
-
     pile p = suiv;
     *info = p->info;
     *suivt_list = p->suivt_list;
     suiv = suiv->suiv;
     free(p);
 }
-
 afficherpile(pile s)
 {
     list tete;
